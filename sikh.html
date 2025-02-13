@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Profile - CricIndia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            background-color: #005cbf;
+            color: white;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .moto {
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        /* Ribbon Section */
+        .ribbon {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #003f7d;
+            color: white;
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .input {
+            border: none;
+            outline: none;
+            padding: 5px;
+        }
+
+        .search-icon {
+            color: #005cbf;
+            padding-left: 5px;
+        }
+
+        /* Player Profile Section */
+        .profile-container {
+            width: 80%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .player-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto;
+        }
+
+        .player-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .player-dob {
+            font-size: 16px;
+            color: gray;
+            margin-bottom: 10px;
+        }
+
+        .player-info {
+            text-align: left;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9e9e9;
+            border-radius: 5px;
+        }
+
+        /* Hidden Divs */
+        .hidden-container {
+            position: fixed;
+            top: 30%;
+            right: -150px; /* Initially hidden */
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            transition: right 0.3s ease-in-out;
+        }
+
+        .hidden-box {
+            width: 200px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: right 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .box1 { background-color: #FF5733; }  
+        .box2 { background-color: #3498DB; }  
+        .box3 { background-color: #27AE60; }  
+        .box4 { background-color: #F1C40F; }  
+
+        .hidden-container:hover {
+            right: 0;
+        }
+
+        .hidden-box button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .hidden-box button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <div class="logo">CricIndia</div>
+            <div class="moto">~India's Cricket Pulse - Every Ball, Every Moment</div>
+        </div>
+        <div class="ribbon">
+            <div class="location">
+                <i class="fa-solid fa-location-pin"></i>
+                <p>Location</p>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search cricketers" class="input">
+                <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Player Profile Section -->
+    <div class="profile-container">
+        <div class="player-image" style="background-image: url(dhawan.webp);"></div>
+        <div class="player-name">Shikhar Dhawan</div>
+        <div class="player-dob">Born: December 5, 1985</div>
+        <div class="player-info">
+            <p style=" text-align: start;">Shikhar Dhawan (born 5 December 1985) is an Indian former cricketer. A left-handed opening batter, he was considered one of the greatest ODI batsmen for Indian cricket team for a decade and Delhi in domestic cricket. His batting average in ICC World Cups and Champion Trophies is 65.15, which is the highest among batters scoring at least 1000 runs in those tournaments.[3] He was awarded the 'Player of the Tournament' in the 2013 ICC Champions Trophy and was the leading run scorer for India at the 2015 Cricket World Cup.[4]
+
+                Dhawan made his One Day International (ODI) debut against Australia in October 2010 at Visakhapatnam. His Test debut came against the same opposition in March 2013 at Mohali, where he scored the fastest century by any batsman on Test debut (85 balls) and ended his innings with 187 runs from 174 balls. This is also the highest score by an Indian on a Test debut.[5][6][7]
+                
+                In August 2013, Dhawan recorded the then-second-highest individual score in a List A match when he scored 248 runs off 150 balls for India A against South Africa A at Pretoria.[8] During the 4th ODI against South Africa in Johannesburg, he became the first Indian and ninth overall to score a century in his 100th ODI game. On 14 June 2018, against Afghanistan, Dhawan became the sixth batsman, and the first for India, to score a century before lunch on day one of a Test.[9] On 24 August 2024, Dhawan announced his retirement from all forms of cricket.
+            
+                Dhawan first played for Delhi Under-16s in the 1999/00 Vijay Merchant Trophy and was the leading run-scorer of the 2000/01 Vijay Merchant Trophy in which Delhi finished runners-up. He scored 755 runs from 9 innings at an average of 83.88 with two centuries and a top score of 199.[16] Dhawan was selected in the North Zone Under-16s squad for the Vijay Hazare Trophy in February 2001. He scored 30 and 66 in the semifinal against South Zone.[17]
+
+                Dhawan's impressive performances for Delhi Under-16s were rewarded when he was picked in the India Under-17 squad for the 2000/01 ACC Under-17 Asia Cup. He played three games in the tournament averaging 85.[18] Dhawan was subsequently drafted into the Delhi Under-19 team in October 2001, at the age of 15, for the Cooch Behar Trophy. In 2001/02 Vijay Merchant Trophy, Dhawan impressed once again with the bat by scoring 282 runs in 5 innings at an average of 70.50.[19]
+
+                In October 2002, Dhawan was selected again in the Delhi Under-19 team for the Cooch Behar Trophy in which he made 388 runs from 8 innings at an average of 55.42 including two centuries.[20] He was then picked to play for North Zone Under-19s in January 2003 in the Vinoo Mankad Trophy. Dhawan scored 45 and 12 in the semifinal against Central Zone, before top-scoring for his team with 71 in the final on a seaming track in Rohtak against East Zone securing his team an innings-win.[21] In the CK Nayudu Trophy held in February 2003, Dhawan averaged 55.50 with the bat for North Zone Under-19s.[22] He continued to amass runs at the Under-19 domestic level as he scored 444 runs from 6 innings at an average of 74 in the Cooch Behar Trophy in October[23] after which he was made the captain of the Delhi Under-19 team. Dhawan averaged 66.66 in the MA Chidambaram Trophy held in December that year which was his first tournament as captain.</p>
+        </div>
+    </div>
+
+    <!-- Hidden Divs -->
+    <div class="hidden-container">
+        <div class="hidden-box box1"><button>Login</button></div>
+        <div class="hidden-box box2"><button>Help</button></div>
+        <div class="hidden-box box3"><button>Account</button></div>
+        <div class="hidden-box box4"><button>Others</button></div>
+    </div>
+
+</body>
+</html>

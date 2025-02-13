@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Profile - CricIndia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            background-color: #005cbf;
+            color: white;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .moto {
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        /* Ribbon Section */
+        .ribbon {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #003f7d;
+            color: white;
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .input {
+            border: none;
+            outline: none;
+            padding: 5px;
+        }
+
+        .search-icon {
+            color: #005cbf;
+            padding-left: 5px;
+        }
+
+        /* Player Profile Section */
+        .profile-container {
+            width: 80%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .player-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto;
+        }
+
+        .player-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .player-dob {
+            font-size: 16px;
+            color: gray;
+            margin-bottom: 10px;
+        }
+
+        .player-info {
+            text-align: left;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9e9e9;
+            border-radius: 5px;
+        }
+
+        /* Hidden Divs */
+        .hidden-container {
+            position: fixed;
+            top: 30%;
+            right: -150px; /* Initially hidden */
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            transition: right 0.3s ease-in-out;
+        }
+
+        .hidden-box {
+            width: 200px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: right 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .box1 { background-color: #FF5733; }  
+        .box2 { background-color: #3498DB; }  
+        .box3 { background-color: #27AE60; }  
+        .box4 { background-color: #F1C40F; }  
+
+        .hidden-container:hover {
+            right: 0;
+        }
+
+        .hidden-box button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .hidden-box button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <div class="logo">CricIndia</div>
+            <div class="moto">~India's Cricket Pulse - Every Ball, Every Moment</div>
+        </div>
+        <div class="ribbon">
+            <div class="location">
+                <i class="fa-solid fa-location-pin"></i>
+                <p>Location</p>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search cricketers" class="input">
+                <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Player Profile Section -->
+    <div class="profile-container">
+        <div class="player-image" style="background-image: url(bumrah.avif);"></div>
+        <div class="player-name">Jaspreet Bumrah</div>
+        <div class="player-dob">Born: December 6, 1993</div>
+        <div class="player-info">
+            <p style=" text-align: start;">Jasprit Jasbirsingh Bumrah (Punjabi: [dʒəsˈpɾiːt̪ bʊmˈɾaː]; born 6 December 1993) is an Indian cricketer who plays for the national team in all formats of the game. He is the vice-captain of India in the Test format. A right-arm fast bowler, Bumrah plays for Gujarat in domestic cricket and for Mumbai Indians in the Indian Premier League. Bumrah was a crucial member of the Indian team that won the 2024 T20 World Cup, where he was named the player of the tournament for his wicket taking with an economy of 4.17.
+
+                Among Indian fast bowlers, he took 200 wickets in the fewest matches and reached 100 wickets in ODI cricket in the second-shortest time, in terms of matches played. He is the first bowler to have achieved the number one ranking in the ICC men's player rankings in all three formats of the game. He also holds the record of scoring the highest number of runs in an over in Test cricket. He achieved this feat against Stuart Broad.
+                
+                Bumrah made his domestic debut in 2012–13 Syed Mushtaq Ali Trophy and also helped his side clinch its maiden title victory. His first-class debut came against Vidarbha, during the 2013–14 season of the Ranji Trophy. Bumrah was signed by the Mumbai Indians for the 2013 season of IPL. Since then, he has played for MI, contributing to the team's title wins five times. He is the second-highest wicket-taker for MI, behind Lasith Malinga, with 165 wickets in 133 matches.
+                
+                Bumrah made his international debut in January 2016 during India's tour of Australia, where he emerged as the highest wicket-taker of the T20 series. In 2016, he was the highest wicket-taker in a calendar year in T20I cricket, with 28 wickets. He made his Test debut in 2018 against South Africa. Since December 2023, he has served as the vice-captain of the Indian team in Test cricket and has also captained the team thrice in the absence of regular skipper Rohit Sharma. He was named in the ICC Men's Test Team of the Year in 2018 and 2024, in the ICC Men's ODI Team of the Year in 2017 and 2018, and in the ICC Men's T20I Team of the Year in 2024. Additionally, he was named in the ICC Men's T20I Team of the Decade for 2011–2020. Bumrah was awarded the Polly Umrigar Award by the BCCI twice, in 2018–19 and 2021–22. He was also named in the Wisden Cricketers of the Year in 2022.
+                
+                Notably, Jasprit Bumrah achieved a milestone in 2024 by surpassing Ravichandran Ashwin's highest ICC Test bowling rating for an Indian bowler. Bumrah concluded the year as the leading wicket-taker in Test cricket, with 71 wickets, and reached a career-high rating of 908 points, placing him joint-16th on the all-time list. His performances, including a nine-wicket haul in the Melbourne Test in December 2024, secured his position as the top-ranked bowler in the ICC Men’s Test Rankings,[4][5] and was awarded the Sir Garfield Sobers Trophy and the ICC Men's Test Cricketer of the Year in the 2024 ICC Awards.</p>
+        </div>
+    </div>
+
+    <!-- Hidden Divs -->
+    <div class="hidden-container">
+        <div class="hidden-box box1"><button>Login</button></div>
+        <div class="hidden-box box2"><button>Help</button></div>
+        <div class="hidden-box box3"><button>Account</button></div>
+        <div class="hidden-box box4"><button>Others</button></div>
+    </div>
+
+</body>
+</html>

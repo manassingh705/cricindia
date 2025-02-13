@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Profile - CricIndia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            background-color: #005cbf;
+            color: white;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .moto {
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        /* Ribbon Section */
+        .ribbon {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #003f7d;
+            color: white;
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .input {
+            border: none;
+            outline: none;
+            padding: 5px;
+        }
+
+        .search-icon {
+            color: #005cbf;
+            padding-left: 5px;
+        }
+
+        /* Player Profile Section */
+        .profile-container {
+            width: 80%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .player-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto;
+        }
+
+        .player-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .player-dob {
+            font-size: 16px;
+            color: gray;
+            margin-bottom: 10px;
+        }
+
+        .player-info {
+            text-align: left;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9e9e9;
+            border-radius: 5px;
+        }
+
+        /* Hidden Divs */
+        .hidden-container {
+            position: fixed;
+            top: 30%;
+            right: -150px; /* Initially hidden */
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            transition: right 0.3s ease-in-out;
+        }
+
+        .hidden-box {
+            width: 200px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: right 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .box1 { background-color: #FF5733; }  
+        .box2 { background-color: #3498DB; }  
+        .box3 { background-color: #27AE60; }  
+        .box4 { background-color: #F1C40F; }  
+
+        .hidden-container:hover {
+            right: 0;
+        }
+
+        .hidden-box button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .hidden-box button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <div class="logo">CricIndia</div>
+            <div class="moto">~India's Cricket Pulse - Every Ball, Every Moment</div>
+        </div>
+        <div class="ribbon">
+            <div class="location">
+                <i class="fa-solid fa-location-pin"></i>
+                <p>Location</p>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search cricketers" class="input">
+                <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Player Profile Section -->
+    <div class="profile-container">
+        <div class="player-image" style="background-image: url(zaheer.jpg);"></div>
+        <div class="player-name">Zaheer Khan</div>
+        <div class="player-dob">Born: October 8, 1978</div>
+        <div class="player-info">
+            <p style=" text-align: start;">Zaheer Khan (born 8 October 1978) is an Indian former professional cricketer who played all formats of the game for the Indian national team from 2000 till 2014. A left-arm fast-medium bowler known for his ability to "move the ball both ways off the wicket and swing the old ball at some pace",[2] he was known for reverse swing with the old ball.[3][4] Considered one of the best fast bowlers Indian cricket as ever produced, he was the second-most successful Indian pace bowler (tied with Ishant Sharma) in Test cricket, behind Kapil Dev. [5]
+
+                He also has the distinct record of dismissing Graeme Smith, Kumar Sangakkara, Sanath Jayasuriya and Matthew Hayden – some of the game's most feared left-handed batsmen – over 10 times each in international cricket, and also holds the record for dismissing the third-most number of left-handed batsmen (237), after Muttiah Muralitharan (325), and Shaun Pollock (252).
+                
+                Khan started his domestic career by playing for Baroda. In Tests, he was averaged around 36 at home and 31 away from home. With India, he was a member of the team that was one of the joint-winners of the 2002 ICC Champions Trophy, and one of the key members of the 2011 World Cup winning team, leading the pace attack with 21 wickets in just 9 games. In 2011 he was conferred with the Arjuna Award, India's second highest sporting honour, by the President of India.
+                
+                During the course of his career, Khan sustained recurring injuries, which often interrupted his progress at the international level, and this was the reason he set up ProSport Fitness & Services, a special rehabilitation & training center in association with Adrian Le Roux and Andrew Leipus.
+                
+                Khan was selected as one of the Wisden Cricketers of the Year in the year 2008. He announced his retirement from international cricket in October 2015.[6] He played for Worcestershire in County Cricket and played for Royal Challengers Bangalore, Delhi Daredevils and Mumbai Indians in the Indian Premier League. In 2020, the Government of India honoured him with the Padma Shri. He is presently the mentor of the IPL team Lucknow Super Giants.
+            
+                In 2005 Khan, signed for Worcestershire County Cricket Club in England as one of their two overseas players, replacing Shoaib Akhtar.[15] Although Worcestershire went on to lose the match, Zaheer took ten wickets against Somerset on debut;[16] in doing so he became the first Worcestershire player to take 10 wickets on debut for over 100 years.[17] In June he took the first nine wickets to fall in the first innings against Essex, ending with 9–138; had wicket-keeper Steven Davies not dropped a catch offered by last man Darren Gough he would have become the first bowler ever to take all ten for the county.</p>
+        </div>
+    </div>
+
+    <!-- Hidden Divs -->
+    <div class="hidden-container">
+        <div class="hidden-box box1"><button>Login</button></div>
+        <div class="hidden-box box2"><button>Help</button></div>
+        <div class="hidden-box box3"><button>Account</button></div>
+        <div class="hidden-box box4"><button>Others</button></div>
+    </div>
+
+</body>
+</html>

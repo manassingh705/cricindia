@@ -1,0 +1,105 @@
+*{
+    margin:0;
+    padding: 0%;
+    
+
+}
+
+.navbar{
+   height: 100px;
+   background-color: rgb(6,6,52);
+   color: white;
+   display: flex;
+   
+   align-items: center;
+   
+   
+}
+
+.logo{
+    height:60px;
+    width: 250px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    
+   
+
+}
+.crickindia{
+    background-image:url(2logo.jpg);
+    height: 60px;
+    background-size: cover;
+
+
+}
+.border{
+    border: 1.5px solid rgb(6,6,52);
+
+}
+.border:hover{
+    border: 1.5px solid white;
+}
+
+.moto{
+    color: white;
+    font-family: cursive;
+    text-align: end;
+    font-size: 20px;
+    margin-left: 55ch;
+    background-color: rgb(6,6,52);
+
+}
+.ribbon{
+    background-color: rgb(90, 76, 3);
+    height: 60px;
+    color: rgb(6,6,52);
+    display: flex;
+    align-items: center;
+
+}
+.location{
+    background-color:rgb(90, 76, 3) ;
+    font-size:30px ;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color:rgb(90, 76, 3) ;
+    display: flex;
+align-items: center;
+border: 1.5px solid transparent;
+
+}
+.wrf{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 2px;
+
+}
+.search{
+    display: flex;
+    background-color: grey;
+    width:700px;
+    height: 40px;
+    border-radius: 4px;
+    margin-left: 85ch;
+
+}
+.input{
+    width:100%;
+    font-size: 20px;
+    border:none;
+    background-color: ;
+    color: rgb(6,6,52);
+
+}
+
+
+.search-icon{
+    width:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(6,6,52);
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    color: white;}
+
+   

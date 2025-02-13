@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Profile - CricIndia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            background-color: #005cbf;
+            color: white;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .moto {
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        /* Ribbon Section */
+        .ribbon {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #003f7d;
+            color: white;
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .input {
+            border: none;
+            outline: none;
+            padding: 5px;
+        }
+
+        .search-icon {
+            color: #005cbf;
+            padding-left: 5px;
+        }
+
+        /* Player Profile Section */
+        .profile-container {
+            width: 80%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .player-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto;
+        }
+
+        .player-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .player-dob {
+            font-size: 16px;
+            color: gray;
+            margin-bottom: 10px;
+        }
+
+        .player-info {
+            text-align: left;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9e9e9;
+            border-radius: 5px;
+        }
+
+        /* Hidden Divs */
+        .hidden-container {
+            position: fixed;
+            top: 30%;
+            right: -150px; /* Initially hidden */
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            transition: right 0.3s ease-in-out;
+        }
+
+        .hidden-box {
+            width: 200px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: right 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .box1 { background-color: #FF5733; }  
+        .box2 { background-color: #3498DB; }  
+        .box3 { background-color: #27AE60; }  
+        .box4 { background-color: #F1C40F; }  
+
+        .hidden-container:hover {
+            right: 0;
+        }
+
+        .hidden-box button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .hidden-box button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <div class="logo">CricIndia</div>
+            <div class="moto">~India's Cricket Pulse - Every Ball, Every Moment</div>
+        </div>
+        <div class="ribbon">
+            <div class="location">
+                <i class="fa-solid fa-location-pin"></i>
+                <p>Location</p>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search cricketers" class="input">
+                <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Player Profile Section -->
+    <div class="profile-container">
+        <div class="player-image" style="background-image: url(jadeja.png);"></div>
+        <div class="player-name">Ravindra Jadeja</div>
+        <div class="player-dob">Born: December 6, 1988</div>
+        <div class="player-info">
+            <p style=" text-align: start;">Ravindrasinh Anirudhsinh Jadeja (born 6 December 1988) is an Indian international cricketer who represents the Indian national cricket team in ODI and Test formats. He is an all-rounder, who bats left-handed and bowls left-arm orthodox spin. He is regarded as one of the best all-rounders of his generation, becoming the fifth Indian and fifth-fastest player to score 2,000 runs and take 200 wickets in Test cricket in 2021. Jadeja was the leading wicket-taker in the 2013 ICC Champions Trophy and received the man of the match award as a member of the final-winning team.[3] Later in his career, he was also a part of the team which won the 2024 T20 World Cup, after which he announced his retirement from the T20Is.[4] He represents Saurashtra in first-class cricket and has captained the Chennai Super Kings in the Indian Premier League. As of August 2023, Ravindra Jadeja is the 7th highest ODI wicket taker for India with 220 wickets.[5]
+
+                Jadeja was vice-captain of the Indian U-19 cricket team that won the World Cup in Malaysia in 2008, under the captaincy of former Indian captain Virat Kohli.[6] He made his ODI debut against Sri Lanka on 8 February 2009 and scored an unbeaten 60 off 77 balls in that match. However, his Test debut came almost four years later, on 13 December 2012, against England at Nagpur.[7]
+                
+                Jadeja was bought for $2 million by the Chennai Super Kings at the 2012 IPL Players Auction. He was bought by the Gujarat Lions in the 2016 IPL Players Auction for ₹9.5 crores after the Chennai Super Kings were banned from the IPL for two seasons. On 22 January 2017, Jadeja became the first Indian left-arm spinner to take 150 One Day International wickets, when he dismissed Sam Billings at Eden Gardens, Kolkata.[8] In March 2017, he became the top ranked bowler in the world leaving behind Ravichandran Ashwin who held that position for a long time.[9] He was announced as captain of the Chennai Super Kings IPL franchise, for the 2022 IPL season, succeeding MS Dhoni.[10] He however stepped down in the middle of the season.
+            
+                Jadeja made his first Under-19 appearance for India in 2005 at the age of 16. He was picked in the Indian squad for the 2006 U/19 Cricket World Cup in Sri Lanka. India finished runners-up with Jadeja impressing in the final against Pakistan with a haul of three wickets. He was the vice-captain of the victorious Indian team at the 2008 U/19 Cricket World Cup. He played a crucial role with the ball in the tournament, taking 10 wickets in six games at an average of 13.60.
+            
+                Jadeja made his first Under-19 appearance for India in 2005 at the age of 16. He was picked in the Indian squad for the 2006 U/19 Cricket World Cup in Sri Lanka. India finished runners-up with Jadeja impressing in the final against Pakistan with a haul of three wickets. He was the vice-captain of the victorious Indian team at the 2008 U/19 Cricket World Cup. He played a crucial role with the ball in the tournament, taking 10 wickets in six games at an average of 13.60.</p>
+        </div>
+    </div>
+
+    <!-- Hidden Divs -->
+    <div class="hidden-container">
+        <div class="hidden-box box1"><button>Login</button></div>
+        <div class="hidden-box box2"><button>Help</button></div>
+        <div class="hidden-box box3"><button>Account</button></div>
+        <div class="hidden-box box4"><button>Others</button></div>
+    </div>
+
+</body>
+</html>

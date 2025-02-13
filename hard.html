@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Profile - CricIndia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            background-color: #005cbf;
+            color: white;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .moto {
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        /* Ribbon Section */
+        .ribbon {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #003f7d;
+            color: white;
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .input {
+            border: none;
+            outline: none;
+            padding: 5px;
+        }
+
+        .search-icon {
+            color: #005cbf;
+            padding-left: 5px;
+        }
+
+        /* Player Profile Section */
+        .profile-container {
+            width: 80%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .player-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto;
+        }
+
+        .player-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .player-dob {
+            font-size: 16px;
+            color: gray;
+            margin-bottom: 10px;
+        }
+
+        .player-info {
+            text-align: left;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9e9e9;
+            border-radius: 5px;
+        }
+
+        /* Hidden Divs */
+        .hidden-container {
+            position: fixed;
+            top: 30%;
+            right: -150px; /* Initially hidden */
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            transition: right 0.3s ease-in-out;
+        }
+
+        .hidden-box {
+            width: 200px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: right 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .box1 { background-color: #FF5733; }  
+        .box2 { background-color: #3498DB; }  
+        .box3 { background-color: #27AE60; }  
+        .box4 { background-color: #F1C40F; }  
+
+        .hidden-container:hover {
+            right: 0;
+        }
+
+        .hidden-box button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .hidden-box button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <div class="logo">CricIndia</div>
+            <div class="moto">~India's Cricket Pulse - Every Ball, Every Moment</div>
+        </div>
+        <div class="ribbon">
+            <div class="location">
+                <i class="fa-solid fa-location-pin"></i>
+                <p>Location</p>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search cricketers" class="input">
+                <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Player Profile Section -->
+    <div class="profile-container">
+        <div class="player-image" style="background-image: url(hardik.avif);"></div>
+        <div class="player-name">Hardik Pandya</div>
+        <div class="player-dob">Born: October 11, 1993</div>
+        <div class="player-info">
+            <p style=" text-align: start;">Hardik Himanshu Pandya (born 11 October 1993) is an Indian international cricketer who plays for the Indian cricket team. He is an all-rounder who is a right-handed middle order batsman and fast-medium bowler. He is considered one of the best all-rounders in the world in white-ball cricket. Pandya has represented India in all 3 formats. He captains Mumbai Indians in the Indian Premier League (IPL), and occasionally plays for his regional team Baroda in domestic cricket. He has captained the Indian team in white-ball cricket and was the vice captain of the team that won the 2024 T20 World Cup.
+
+                Pandya has been playing for the Baroda cricket team since 2013. He played a vital role in helping Baroda win the Syed Mushtaq Ali Trophy in the 2013–14 season. In January 2016, he slammed eight sixes during his innings, scoring 86 runs not-out, to guide the Baroda cricket team to a six-wicket win over Vidarbha cricket team for the Syed Mushtaq Ali Trophy.[8]
+
+                Pandya played for the Mumbai Indians in the IPL from 2015 to 2021.[9][10] Against the Kolkata Knight Riders, in a must-win match for Mumbai Indians to remain in the playoff race, he scored 61 runs off 31 balls to take the match, earning him his second man of the match award of the season.[11]
+                
+                Ahead of the IPL 2022 mega auction, Pandya was released by the Mumbai Indians. He was then drafted by the new Ahmedabad franchise, Gujarat Titans, and named captain of the team.[12][13] He led Gujarat to their maiden IPL title in 2022, becoming the first captain after Shane Warne in 2008 to lead a team to the title in its first year.[14] In the IPL 2023 Pandya again led Gujarat Titans to their second consecutive final but lost to Chennai Super Kings by five wickets through DLS method.
+                
+                IPL 2022
+                Hardik Pandya's Magical 2022 IPL Campaign – Hardik Pandya's performance in the 2022 Indian Premier League (IPL) was a remarkable display of leadership and all-round cricketing prowess. As the captain of the newly formed Gujarat Titans, Pandya led his team to their maiden IPL title in a season that saw him excel both with the bat and the ball, and as a strategic leader.
+                
+                Captaincy and leadership – Pandya was picked up by the Gujarat Titans for ₹15 crore and was installed as the captain, despite concerns about his fitness and lack of recent bowling form. His leadership style, described as calm and strategic, played a crucial role in the Titans' successful campaign. Pandya adopted a philosophy where he took responsibility for failures and credited successes to his team, which fostered a strong, cohesive unit. His captaincy was marked by smart on-field decisions and effective player management, earning him widespread acclaim.
+            </p>
+        </div>
+    </div>
+
+    <!-- Hidden Divs -->
+    <div class="hidden-container">
+        <div class="hidden-box box1"><button>Login</button></div>
+        <div class="hidden-box box2"><button>Help</button></div>
+        <div class="hidden-box box3"><button>Account</button></div>
+        <div class="hidden-box box4"><button>Others</button></div>
+    </div>
+
+</body>
+</html>

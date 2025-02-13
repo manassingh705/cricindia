@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Reveal Divs</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            position: fixed;
+            top: 20%;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .hidden-box {
+            width: 200px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+            border-radius: 10px;
+            font-weight: bold;
+            color: white;
+            transform: translateX(100px); /* Initially 50% hidden */
+        }
+
+        /* Different colors for each box */
+        .box1 { background-color: #FF5733; }  /* Red */
+        .box2 { background-color: #3498DB; }  /* Blue */
+        .box3 { background-color: #27AE60; }  /* Green */
+        .box4 { background-color: #F1C40F; }  /* Yellow */
+
+        /* Show div fully on hover */
+        .hidden-box:hover {
+            transform: translateX(0); /* Moves fully into view */
+        }
+
+        /* Button styling */
+        .hidden-box button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .hidden-box button:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="hidden-box box1"><button>Login</button></div>
+        <div class="hidden-box box2"><button>Help</button></div>
+        <div class="hidden-box box3"><button>Account</button></div>
+        <div class="hidden-box box4"><button>Others</button></div>
+    </div>
+
+</body>
+</html>

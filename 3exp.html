@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CricIndia Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            background-color: #005cbf;
+            color: white;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .moto {
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        /* Ribbon Section */
+        .ribbon {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #003f7d;
+            color: white;
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .input {
+            border: none;
+            outline: none;
+            padding: 5px;
+        }
+
+        .search-icon {
+            color: #005cbf;
+            padding-left: 5px;
+        }
+
+        /* Main Content */
+        main {
+            width: 80%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .players-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .player-box {
+            width: 23%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .player-name {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px 0;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .player-name a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+        }
+
+        .player-name a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .players-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .player-box {
+                width: 100%;
+            }
+        }
+
+        .marg {
+            margin-top: 50px;
+        }
+        .hidden-container {
+            position: fixed;
+            top: 30%;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .hidden-box {
+            width: 200px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+            border-radius: 10px;
+            font-weight: bold;
+            color: white;
+            transform: translateX(100px); /* Initially 50% hidden */
+        }
+
+        /* Different colors for each box */
+        .box1 { background-color: #FF5733; }  /* Red */
+        .box2 { background-color: #3498DB; }  /* Blue */
+        .box3 { background-color: #27AE60; }  /* Green */
+        .box4 { background-color: #F1C40F; }  /* Yellow */
+
+        /* Show div fully on hover */
+        .hidden-box:hover {
+            transform: translateX(0); /* Moves fully into view */
+        }
+
+        /* Button styling */
+        .hidden-box button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .hidden-box button:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="navbar">
+        <div class="logo">CricIndia</div>
+        <div class="moto">~India's Cricket Pulse - Every Ball, Every Moment</div>
+    </div>
+    <div class="ribbon">
+        <a style="text-decoration: none; color: white;" href="location.html">
+            <div class="location">
+                <i class="fa-solid fa-location-pin"></i>
+                <p>Location</p>
+            </div>
+        </a>
+        <div class="search">
+            <input type="text" placeholder="Search cricketers" class="input">
+            <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="marg">
+        <h2>Indian Bowlers</h2>
+        <div class="players-container">
+            <div style="background-image: url(zaheer.jpg);" class="player-box">
+                <div class="player-name"><a href="jah.html">Zaheer Khan</a></div>
+            </div>
+            <div style="background-image: url(bumrah.avif);" class="player-box">
+                <div class="player-name"><a href="jass.html">Jasprit Bumrah</a></div>
+            </div>
+            <div style="background-image: url(shami.webp);" class="player-box">
+                <div class="player-name"><a href="shami.html">Mohammed Shami</a></div>
+            </div>
+            <div style="background-image: url(bhuvi.webp);" class="player-box">
+                <div class="player-name"><a href="bhuv.html">Bhuvneshwar Kumar</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="marg">
+        <h2>Indian Batsmen</h2>
+        <div class="players-container">
+            <div style="background-image: url(sachin.webp);" class="player-box">
+                <div class="player-name"><a href="sachin.html">Sachin Tendulkar</a></div>
+            </div>
+            <div style="background-image: url(dhawan.webp);" class="player-box">
+                <div class="player-name"><a href="sikh.html">Shikhar Dhawan</a></div>
+            </div>
+            <div style="background-image: url(rohit.avif);" class="player-box">
+                <div class="player-name"><a href="rohit.html">Rohit Sharma</a></div>
+            </div>
+            <div style="background-image: url(virat.avif);" class="player-box">
+                <div class="player-name"><a href="virat.html">Virat Kohli</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="marg">
+        <h2>All-Rounders</h2>
+        <div class="players-container">
+            <div style="background-image: url(yuvraj.png);" class="player-box">
+                <div class="player-name"><a href="yuvraj.html">yuvraj singh</a></div>
+            </div>
+            <div style="background-image: url(jadeja.png);" class="player-box">
+                <div class="player-name"><a href="jaddu.html">Ravindra Jadeja</a></div>
+            </div>
+            <div style="background-image: url(hardik.avif);" class="player-box">
+                <div class="player-name"><a href="hard.html">Hardik Pandya</a></div>
+            </div>
+            <div style="background-image: url(ashwin.webp);" class="player-box">
+                <div class="player-name"><a href="ashwin.html">Ashwin</a></div>
+            </div>
+        </div>
+        <div class="marg">
+        <h2>Indian Wicket-Keepers</h2>
+        <div class="players-container">
+            <div style="background-image: url(dhoni-removebg-preview.png);" class="player-box">
+                <div class="player-name"><a href="dhoni.html">MS Dhoni</a></div>
+            </div>
+            <div style="background-image: url(rahul.avif);" class="player-box">
+                <div class="player-name"><a href="kl.html">KL Rahul</a></div>
+            </div>
+            <div style="background-image: url(pant.avif);" class="player-box">
+                <div class="player-name"><a href="ris.html">Rishabh Pant</a></div>
+            </div>
+            <div style="background-image: url(dinesh.webp);" class="player-box">
+                <div class="player-name"><a href="dinesh.html">Dinesh Kartik</a></div>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="hidden-container">
+    <a style="text-decoration: none;" href="login.html" >  <div class="hidden-box box1"><button >Login</button></div></a>
+    <a  style="text-decoration: none;" href="help.html" > <div class="hidden-box box2"><button>Help</button></div></a>
+     <a  style="text-decoration: none;" href="account.html" > <div class="hidden-box box3"><button>Account</button></div></a>
+     <a style="text-decoration: none;"  href="others.html">  <div class="hidden-box box4"><button>Others</button></div></a>
+   </div>
+
+</body>
+</html>
