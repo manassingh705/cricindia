@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CricIndia</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background: linear-gradient(135deg, #00274d, #004c99);
+            overflow: hidden;
+            transition: background 1s ease-in-out;
+            text-align: center;
+            color: white;
+        }
+
+        /* Header */
+        .header {
+            font-size: 40px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .motto {
+            font-size: 18px;
+            font-style: italic;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        /* Shapes */
+        .shapes {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            opacity: 0.2;
+        }
+
+        .shapes div {
+            position: absolute;
+            background: white;
+            opacity: 0.1;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            top: 10%;
+            left: 20%;
+        }
+
+        .square {
+            width: 80px;
+            height: 80px;
+            top: 70%;
+            right: 20%;
+        }
+
+        /* Cricket Ball */
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cricket-ball {
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle at 30% 30%, #ff4500, #a52a2a);
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 5px 5px 10px rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .cricket-ball::before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 100%;
+            background: white;
+            left: 48%;
+            top: 0;
+            border-radius: 50%;
+            box-shadow: 5px 0 5px rgba(255, 255, 255, 0.2);
+        }
+
+        .cricket-ball:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Shutter Effect */
+        .shutter {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 1s ease-in-out;
+        }
+
+        .shutter h1 {
+            color: white;
+            font-size: 60px;
+            letter-spacing: 3px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards 0.5s;
+        }
+
+        .shutter.active {
+            transform: scaleY(1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">CricIndia</div>
+    <div class="motto">"Where Passion Meets Cricket!"</div>
+
+    <div class="shapes">
+        <div class="circle"></div>
+        <div class="square"></div>
+    </div>
+
+    <div class="container">
+        <div class="cricket-ball" onclick="openPage()"></div>
+    </div>
+
+    <div class="shutter" id="shutter">
+        <h1>CricIndia</h1>
+    </div>
+
+    <script>
+        function openPage() {
+            document.getElementById('shutter').classList.add('active');
+            setTimeout(() => {
+                window.location.href = "3exp.html"; // Change to your desired URL
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
